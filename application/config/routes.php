@@ -69,8 +69,8 @@ $route['api/product/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/product/products/id/
 | REST API Client Routes
 | -------------------------------------------------------------------------
 */
-$route['view_product/(:num)'] = 'client/view_product/$1'; // single
+/* $route['view_product/(:num)'] = 'client/view_product/$1'; // single
 $route['view_all_products'] = 'client/view_products'; // single
 $route['specs'] = 'client/specs'; // List of specifications
 $route['view_all_products/([price|id|name].+)/([asc|desc].+)'] = 'client/view_products/$1/$2'; 
- 
+  */
