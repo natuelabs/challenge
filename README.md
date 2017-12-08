@@ -1,3 +1,13 @@
+# natue
+1. download the repo to your localhost
+2. get method run example http://localhost/api/products (to view all products)
+   customize seach with specification  and order by price 
+   http://localhost/api/products?sort=price&order=asc&spec=sugar-free
+   
+   this will order products by "price asc" and specification which has sugar-free
+   like that you can search the products 
+   
+   this api  built by CodeIgniter Web Framework
 <p align="center">
   <a href="https://www.natue.com.br">
       <img src="https://static.natue.com.br/images/icons/footer-logo.png" alt="Natue"/>
@@ -27,3 +37,4 @@ Remember that at the time of the evaluation we will look at:
 To send us your code, you must:
 
 Make a fork of this repository, and send us a pull-request.
+>>>>>>> 5e1963c5690ddde7bcdadd61ad2c7c7590a40a6b
