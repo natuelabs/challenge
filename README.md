@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # natue
 1. download the repo to your localhost
 2. get method run example http://localhost/api/products (to view all products)
@@ -9,7 +8,6 @@
    like that you can search the products 
    
    this api  built by CodeIgniter Web Framework
-=======
 <p align="center">
   <a href="https://www.natue.com.br">
       <img src="https://static.natue.com.br/images/icons/footer-logo.png" alt="Natue"/>
