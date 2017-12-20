@@ -1,0 +1,15 @@
+.panel-footer{min-height:55px;}
+
+.specification-check{height:40px; line-height:30px; font-size:16px;}
+input[type="checkbox"]{width:23px; height:23px; margin-right:10px; float:left;}
+
+.list-group-item{height:70px;}
+.badge{margin-right:5px;}
+.arrow{font-size:20px;}
+
+.vegan{background:#daea7c;}
+.vegetarian{background:#41f795;}
+.low-carb{background:#bddaf7;}
+.lactose-free{background:#d1ded7;}
+.gluten-free{background:#b7e5ec;}
+
