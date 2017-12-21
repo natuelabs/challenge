@@ -1,49 +1,21 @@
 var Catalog = (function(){
     
     var aProduct = [],
-        aSpecification = [];
+        aSpecification = [],
+        aSpecificationFilter = [],
+        sOrderBy = 'asc';
 
     function init(){
-        getProducts(null);
-        getSpecifications();
+        getSpecificationsData(addSpecification);
+        getProductsData(addProducts);
+        
+        bindCheckboxFilter();
         bindBtFilter();
+
+        bindBtOrderBy();
     }
 
-    function getProducts(IDs=null){
-        $.ajax({
-            url: "http://local.natuelabschallenge:8383/api/product",
-            type: "GET",
-            dataType: "json",
-            data: IDs,
-            success: function (data){
-                aProduct = [];
-                data.forEach(function(item){                            
-                    aProduct[item.id] = {
-                        id: item.id,
-                        name: item.name,
-                        price: item.price,
-                        specifications: getSpecificationsID(item.specifications)
-                    };
-                });
-                
-                addProducts();
-            },
-            error: function (xhr, ajaxOptions, thrownError){
-                //console.log(xhr.status);
-                //console.log(thrownError);
-            }
-        });
-    }
-
-    function getSpecificationsID(specifications){
-        var arr = [];
-        specifications.forEach(function(item){
-            arr.push(item.id_specification);
-        });
-        return arr;
-    }
-
-    function getSpecifications(){
+    function getSpecificationsData(callback){
         $.ajax({
             url: "http://local.natuelabschallenge:8383/api/specification",
             type: "GET",
@@ -56,13 +28,70 @@ var Catalog = (function(){
                         description: item.description
                     };
                 });
-                addSpecification();
+                
+                if(callback){
+                    callback();
+                }
             },
             error: function (xhr, ajaxOptions, thrownError){
-                //console.log(xhr.status);
-                //console.log(thrownError);
+                console.error(xhr.status);
+                console.error(thrownError);
             }
         });
+    }
+
+    function getProductsData(callback){
+        sQueryString = getQueryString();
+
+        $.ajax({
+            url: "http://local.natuelabschallenge:8383/api/product",
+            type: "GET",
+            dataType: "json",
+            data: sQueryString,
+            success: function (data){
+                aProduct = [];
+                data.forEach(function(item){                            
+                    aProduct.push({
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        specifications: getSpecificationsID(item.specifications)
+                    });
+                });
+
+                if(callback){
+                    callback();
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError){
+                console.error(xhr.status);
+                console.error(thrownError);
+            }
+        });
+    }
+
+    function getQueryString(){
+        var sQueryString = '';
+
+        for (var i = 0; i < aSpecificationFilter.length; i++) {
+            sQueryString += 'specifications[]='+aSpecificationFilter[i];
+            
+            if(i<aSpecificationFilter.length-1){
+                sQueryString += '&';    
+            }
+        }
+        
+        sQueryString += '&sOrderBy='+sOrderBy;
+
+        return sQueryString;
+    }
+
+    function getSpecificationsID(specifications){
+        var arr = [];
+        specifications.forEach(function(item){
+            arr.push(item.id_specification);
+        });
+        return arr;
     }
 
     function addProducts(){
@@ -111,13 +140,48 @@ var Catalog = (function(){
         return str;
     }
 
+    function bindCheckboxFilter(){
+        $('input[name="specifications[]"]').on('click', function(e){           
+
+            if($(this).is(':checked') === true){                
+                aSpecificationFilter.push(this.value);
+            }
+            else
+            {
+                index = aSpecificationFilter.indexOf(this.value);
+                
+                if (index > -1) {
+                    aSpecificationFilter.splice(index, 1);
+                }
+            }
+        });
+    }
+
     function bindBtFilter(){
         $('input[type="submit"]').on('click', function(e){
             e.preventDefault();
-            var checks = $('input[name="specifications[]"]').filter(':checked'),
-                   IDs = filterSpecificationsIDs(checks);
+            getProductsData(addProducts);
+        });
+    }
 
-            getProducts(IDs);
+    function bindBtOrderBy(){
+        $('#orderBy').on('click', function(e){
+            e.preventDefault();
+
+            if($(this).data('order') == 'asc'){
+                $(this).data('order','desc');
+                // $(this).find('span').removeClass('glyphicon-arrow-up');
+                // $(this).find('span').addClass('glyphicon-arrow-down');
+            }
+            else{
+                $(this).data('order','asc');
+                // $(this).find('span').removeClass('glyphicon-arrow-down');
+                // $(this).find('span').addClass('glyphicon-arrow-up');
+            }
+
+            sOrderBy = $(this).data('order');
+
+            getProductsData(addProducts);
         });
     }
 

@@ -15,21 +15,24 @@ class Products extends Controller
     public function index()
     {
         $aRequest = \Request::all();
-        
+
         $oProducts = new Product();
         $oProducts = $oProducts->with('specifications');
 
         if(isset($aRequest['specifications']) && !empty($aRequest['specifications'])){
-            $oProducts = $oProducts->join('products_specifications', function ($join) use ($aRequest){
-                              $join->on('products.id', '=', 'products_specifications.id_product')
-                                   ->whereIn('products_specifications.id_specification',$aRequest['specifications']);
-                               });
+            $oProducts = $oProducts->whereHas('specifications', function ($query) use ($aRequest){
+                $query->whereIn('products_specifications.id_specification', $aRequest['specifications']);
+            });
+        }
+        
+        $sOrderBy = 'asc';
+        if(isset($aRequest['sOrderBy']) && !empty($aRequest['sOrderBy'])){
+            $sOrderBy = $aRequest['sOrderBy'];
         }
 
-        $oProducts = $oProducts->orderBy('products.price','desc');
-
-dd($oProducts->get());
-
+        $oProducts = $oProducts->distinct();
+        $oProducts = $oProducts->orderBy('price', $sOrderBy);
+        
         return $oProducts->get();
     }
 

@@ -9,7 +9,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Produtos
-                        <a href="javascript:void(0)" class="glyphicon glyphicon-arrow-up pull-right arrow">asc</a>
+                        <button id="orderBy" type="button" class="btn btn-success btn-md pull-right" data-order="asc">
+                            <span class="glyphicon glyphicon-arrow-up"></span>
+                            &nbsp;&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-arrow-down"></span>
+                        </button>
                     </div>
                     <div class="panel-body">
                         <div class="list-group" id="catalog-list"></div>
@@ -19,13 +23,13 @@
             
             <!-- Filtro -->
             <div class="col-md-4">
-                <div class="panel panel-default">                    
+                <div class="panel panel-default">
                     <div class="panel-heading">Filtro</div>
                     <div class="panel-body" id="specification-list"></div>
                     <div class="panel-footer">
                         <div class="form-group">
                             <form name="GET" action="">
-                                <input class="btn btn-primary form-control pull-right" name="acao" type="submit" value="Filtrar">
+                                <input class="btn btn-primary form-control pull-right" name="acao" type="submit">
                             </form>
                         </div>
                     </div>
