@@ -77,12 +77,12 @@ Make a fork of this repository, and send us a pull-request.
     composer install
 
 1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
-    ##DB_CONNECTION=mysql
-    ##DB_HOST=127.0.0.1
-    ##DB_PORT=3306
-    ##DB_DATABASE=natuechallenge
-    ##DB_USERNAME=root
-    ##DB_PASSWORD=
+##DB_CONNECTION=mysql
+##DB_HOST=127.0.0.1
+##DB_PORT=3306
+##DB_DATABASE=natuechallenge
+##DB_USERNAME=root
+##DB_PASSWORD=
 
 2. Run the command on cmd/terminal to create database tables and seeds:
     php artisan migrate:refresh --seed
