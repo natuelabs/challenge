@@ -26,44 +26,74 @@ To send us your code, you must:
 
 Make a fork of this repository, and send us a pull-request.
 
-    This test was made with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
+## Natue Challenge
+## This test was made with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
+    - API Server was made with Laravel Resource;
+    - The .json data is provided by the Laravel Framework brought from the MySql database.
+    - API Client was made with AJAX,jQuery and Bootstrap.
 
-    ## To make this test work follow the steps:
+## Project Structure
+    /database/migrations/
+        create_products_table.php
+        create_specifications_table.php
+        create_products_specifications_table.php
 
-    #Softwares dependencies:
-    1. Install Composer to download the libs dependencies.
-    2. Install Xampp - To run a local server - Apache/MySql/PHP.
+    /database/seeds/
+        DatabaseSeeder.php
+        ProductsSpecificationsTableSeeder.php
+        ProductsTableSeeder.php
+        SpecificationsTableSeeder.php
 
-    #Config
-    1. Add Windows Host:
-        Edit file C:\Windows\System32\drivers\etc\hosts and add line:
-            127.0.0.1   local.natuelabschallenge
+    /routes
+        api.php
+        web.php
 
-    2. Create Apache Virtual Host Config C:\xampp\apache\conf\local\natuelabschallenge.conf
-        <VirtualHost local.natuelabschallenge:8383>
-            ServerAdmin mca.digital@outlook.com
-            DocumentRoot "C:/xampp/htdocs/local.natuelabschallenge/public"
-            ServerName local.natuelabschallenge
-            ServerAlias www.local.natuelabschallenge
-            ErrorLog "logs/local.natuelabschallenge-error.log"
-            CustomLog "logs/local.natuelabschallenge-access.log" common
-        </VirtualHost>
+    /app/Http/Controllers
+        CatalogController.php
+        Specifications.php
+        Products.php
 
-    3. Add Apache Virtual Host Config in C:\xampp\apache\conf\httpd.conf
-        # Virtual hosts
-        Include conf/local/natuelabschallenge.conf
+    /app/Models
+        Product.php
+        Specification.php
+        ProductSpecification.php
+    
+    /resources/views
+        catalog.blade.php
 
-    #Access folder project C:/xampp/htdocs/local.natuelabschallenge and run the command:
-    4. Run the command on cmd/terminal:
-        composer install
+    /public
+        /css/catalog.css
+        /js/catalog.js
 
-    5. Run the command on cmd/terminal:
-        php artisan migrate:refresh --seed
+## To make this test work follow the steps:
 
-    6. Access url on browser local.natuelabschallenge:8383
+#Softwares dependencies:
+1. Install Composer to download the libs dependencies.
+2. Install MySql Database.    
+3. Install Xampp - To run a local server - Apache/MySql/PHP.
+4. Create a Database named 'natuechallenge'
+
+#Access the project root folder and run the command on cmd/terminal to install dependencies:
+    composer install
+
+4. Make a copy of .env.exemple to .env and edit .env file to connect the database;
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=natuechallenge
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+5. Run the command on cmd/terminal to create database tables and seeds:
+    php artisan migrate:refresh --seed
+
+5. Run the command on cmd/terminal to run the project:
+    php artisan serve
+
+6. Access the project on browser http://127.0.0.1:8000/catalog
 
 An explanation of how to perform the tests;
-    The View project has a simple layout where left side has a product list and right side there are a specifications filter.
-    You can search for products and filter your specifications.
-    You can order by price too just clicking in blue arrows above the prices.
-    Enjoy!
+The View project has a simple layout where left side has a product list and right side there are a specifications filter.
+You can search for products and filter your specifications.
+You can order by price too just clicking in blue arrows above the prices.
+Enjoy!

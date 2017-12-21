@@ -17,7 +17,7 @@ var Catalog = (function(){
 
     function getSpecificationsData(callback){
         $.ajax({
-            url: "http://local.natuelabschallenge:8383/api/specification",
+            url: "http://127.0.0.1:8000/api/specification",
             type: "GET",
             dataType: "json",
             async: false,
@@ -44,7 +44,7 @@ var Catalog = (function(){
         sQueryString = getQueryString();
 
         $.ajax({
-            url: "http://local.natuelabschallenge:8383/api/product",
+            url: "http://127.0.0.1:8000/api/product",
             type: "GET",
             dataType: "json",
             data: sQueryString,
@@ -110,9 +110,7 @@ var Catalog = (function(){
     function listItem(el){
 
         var str  = "<div class='list-group-item'>";
-
             str += "<h4 class='list-group-item-heading'><strong>"+el.name+"</strong></h4>";
-            
             str += "<p class='list-group-item-text pull-left'>";
                         var description = '';
                         el.specifications.forEach(function(id){
@@ -122,9 +120,7 @@ var Catalog = (function(){
                             }
                         });
             str += "</p>";
-
             str += "<span class='pull-right'><strong>R$ "+el.price+"</strong></span>";
-            
             str += "</div>";
 
         return str;            
@@ -133,7 +129,6 @@ var Catalog = (function(){
     function specificationCheck(el){
         var str  = "<div class='specification-check'>";
             str += "<input class='form-control' type='checkbox' name='specifications[]' value='"+el.id+"'>";
-            // str += el.description;
             str += "<span class='badge "+el.description+"'>"+el.description+"</span>";
             str += "</div>";
 
@@ -170,13 +165,9 @@ var Catalog = (function(){
 
             if($(this).data('order') == 'asc'){
                 $(this).data('order','desc');
-                // $(this).find('span').removeClass('glyphicon-arrow-up');
-                // $(this).find('span').addClass('glyphicon-arrow-down');
             }
             else{
                 $(this).data('order','asc');
-                // $(this).find('span').removeClass('glyphicon-arrow-down');
-                // $(this).find('span').addClass('glyphicon-arrow-up');
             }
 
             sOrderBy = $(this).data('order');
