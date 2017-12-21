@@ -71,28 +71,34 @@ Make a fork of this repository, and send us a pull-request.
 #1. Install Composer to download the libs dependencies.    
 #2. To run a local server - Install Apache/MySql/PHP.    
 #3. Or Install Xampp Stack.    
-#4. Create a Database named 'natuechallenge'    
 
 ## Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
 
-#1. Make a copy of .env.exemple to .env and edit .env file to connect the database;    
+#1. Create a Database named 'natuechallenge':
+
+#2. Make a copy of .env.exemple to .env and edit .env file to connect the database:
+#Set database name, username and password:
         DB_CONNECTION=mysql    
         DB_HOST=127.0.0.1    
         DB_PORT=3306        
         DB_DATABASE=natuechallenge    
         DB_USERNAME=root    
         DB_PASSWORD=    
-    
-#2. Run the command on cmd/terminal to create database tables and seeds:
+
+#3. Run the command on cmd/terminal to create encryption key:
+
+    php artisan key:generate
+
+#4. Run the command on cmd/terminal to create database tables and seeds:
 
     php artisan migrate:refresh --seed
 
-#3. Run the command on cmd/terminal to run the project:
+#5. Run the command on cmd/terminal to run the project:
 
     php artisan serve
 
-#4. Access the project on browser 
+#6. Access the project on browser 
 
     http://127.0.0.1:8000/catalog
 
