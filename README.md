@@ -76,7 +76,7 @@ Make a fork of this repository, and send us a pull-request.
 ## Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
 
-- 1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
+#1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
     DB_CONNECTION=mysql
 
     DB_HOST=127.0.0.1
@@ -89,15 +89,15 @@ Make a fork of this repository, and send us a pull-request.
 
     DB_PASSWORD=
 
-- 2. Run the command on cmd/terminal to create database tables and seeds:
+#2. Run the command on cmd/terminal to create database tables and seeds:
 
     php artisan migrate:refresh --seed
 
-- 3. Run the command on cmd/terminal to run the project:
+#3. Run the command on cmd/terminal to run the project:
 
     php artisan serve
 
-- 4. Access the project on browser 
+#4. Access the project on browser 
 
     http://127.0.0.1:8000/catalog
 
