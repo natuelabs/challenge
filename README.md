@@ -67,13 +67,13 @@ Make a fork of this repository, and send us a pull-request.
 
 ## To make this test work follow the steps:
 
-- Softwares dependencies:
+##Softwares dependencies:
 1. Install Composer to download the libs dependencies.
 2. Install MySql Database.    
 3. Install Xampp - To run a local server - Apache/MySql/PHP.
 4. Create a Database named 'natuechallenge'
 
-- Access the project root folder and run the command on cmd/terminal to install dependencies:
+##Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
 
 1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
@@ -88,7 +88,7 @@ Make a fork of this repository, and send us a pull-request.
     DB_USERNAME=root
 
     DB_PASSWORD=
-    
+
 2. Run the command on cmd/terminal to create database tables and seeds:
     php artisan migrate:refresh --seed
 
