@@ -74,46 +74,46 @@ Make a fork of this repository, and send us a pull-request.
 
 - Clone the project to your machine:    
 
-    git clone https://github.com/mca-digital/challenge.git local.natuechallenge
+        git clone https://github.com/mca-digital/challenge.git local.natuechallenge
 
 - Access the project root folder:
 
-    cd local.natuechallenge
+        cd local.natuechallenge
 
 - Run the command on cmd/terminal to install dependencies:
 
-    composer install
+        composer install
 
 - Create a Database named:
 
-    natuechallenge
+        natuechallenge
 
 - Make a copy of .env.exemple to .env and edit .env file to connect the database:    
 
-    Set database name, username and password:
+        Set database name, username and password:
 
-    DB_CONNECTION=mysql    
-    DB_HOST=127.0.0.1    
-    DB_PORT=3306        
-    DB_DATABASE=natuechallenge    
-    DB_USERNAME=root    
-    DB_PASSWORD=    
+        DB_CONNECTION=mysql    
+        DB_HOST=127.0.0.1    
+        DB_PORT=3306        
+        DB_DATABASE=natuechallenge    
+        DB_USERNAME=root    
+        DB_PASSWORD=    
 
 - Run the command on cmd/terminal to create encryption key:
 
-    php artisan key:generate
+        php artisan key:generate
 
 - Run the command on cmd/terminal to create database tables and seeds:
 
-    php artisan migrate:refresh --seed
+        php artisan migrate:refresh --seed
 
 - Run the command on cmd/terminal to run the project:
 
-    php artisan serve
+        php artisan serve
 
 - Access the project on browser 
 
-    http://127.0.0.1:8000/catalog
+        http://127.0.0.1:8000/catalog
 
 ## An explanation of how to perform the tests;
 - The View project has a simple layout where left side has a product list and right side there are a specifications filter.
