@@ -9,7 +9,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Produtos
-                        <button id="orderBy" type="button" class="btn btn-success btn-md pull-right" data-order="asc">
+                        <button id="orderBy" type="button" class="btn btn-primary btn-md pull-right" data-order="asc">
                             <span class="glyphicon glyphicon-arrow-up"></span>
                             &nbsp;&nbsp;&nbsp;
                             <span class="glyphicon glyphicon-arrow-down"></span>
