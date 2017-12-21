@@ -72,15 +72,18 @@ Make a fork of this repository, and send us a pull-request.
 
 ## Follow the above steps to make the test work:
 
-#1. Clone the project to your machine:
-    https://github.com/mca-digital/challenge.git or git@github.com:mca-digital/challenge.git
+#1. Clone the project to your machine:    
+    git clone https://github.com/mca-digital/challenge.git local.natuechallenge
 
-#2. Access the project root folder and run the command on cmd/terminal to install dependencies:
+#2. Access the project root folder:
+    cd local.natuechallenge
+
+#3. Run the command on cmd/terminal to install dependencies:
     composer install
 
-#3. Create a Database named 'natuechallenge':
+#4. Create a Database named 'natuechallenge':
 
-#4. Make a copy of .env.exemple to .env and edit .env file to connect the database:    
+#5. Make a copy of .env.exemple to .env and edit .env file to connect the database:    
 #Set database name, username and password:    
         DB_CONNECTION=mysql    
         DB_HOST=127.0.0.1    
@@ -89,19 +92,19 @@ Make a fork of this repository, and send us a pull-request.
         DB_USERNAME=root    
         DB_PASSWORD=    
 
-#5. Run the command on cmd/terminal to create encryption key:
+#6. Run the command on cmd/terminal to create encryption key:
 
     php artisan key:generate
 
-#6. Run the command on cmd/terminal to create database tables and seeds:
+#7. Run the command on cmd/terminal to create database tables and seeds:
 
     php artisan migrate:refresh --seed
 
-#7. Run the command on cmd/terminal to run the project:
+#8. Run the command on cmd/terminal to run the project:
 
     php artisan serve
 
-#8. Access the project on browser 
+#9. Access the project on browser 
 
     http://127.0.0.1:8000/catalog
 
