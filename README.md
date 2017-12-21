@@ -66,9 +66,17 @@ Make a fork of this repository, and send us a pull-request.
         /js/catalog.js
 
 ## Softwares dependencies:
-#1. Install Composer to download the libs dependencies.    
-#2. Install Apache/MySql/PHP - To run a local server.    
-#3. Or Install Xampp Stack.    
+#1. Install Composer to download the libs dependencies:
+
+        https://getcomposer.org/download/
+
+#3. Install Xampp Stack to run a local server:
+
+    https://www.apachefriends.org/pt_br/download.html
+
+#3. Install Cmder to run commands in terminal on Windows:
+
+    http://cmder.net/
 
 ## Follow the above steps to make the test work:
 
@@ -88,11 +96,15 @@ Make a fork of this repository, and send us a pull-request.
 
         natuechallenge
 
-- Make a copy of .env.exemple to .env and edit .env file to connect the database:
+- Make a copy of .env.exemple to .env:
+
+        cp .env.example .env
+
+- Edit .env file to connect the database:
 
         Set database name, username and password:
         
-        DB_CONNECTION=mysql    
+        DB_CONNECTION=mysql
         DB_HOST=127.0.0.1    
         DB_PORT=3306        
         DB_DATABASE=natuechallenge    
@@ -104,6 +116,10 @@ Make a fork of this repository, and send us a pull-request.
         php artisan key:generate
 
 - Run the command on cmd/terminal to create database tables and seeds:
+
+        php artisan migrate --seed
+        
+- To refresh database structure if needed:
 
         php artisan migrate:refresh --seed
 
