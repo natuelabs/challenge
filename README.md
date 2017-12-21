@@ -65,19 +65,19 @@ Make a fork of this repository, and send us a pull-request.
         /css/catalog.css
         /js/catalog.js
 
-## To make this test work follow the steps:
-
 ## Softwares dependencies:
 #1. Install Composer to download the libs dependencies.    
 #2. To run a local server - Install Apache/MySql/PHP.    
 #3. Or Install Xampp Stack.    
 
-## Access the project root folder and run the command on cmd/terminal to install dependencies:
+## Follow the above steps to make the test work:
+
+#1. Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
 
-#1. Create a Database named 'natuechallenge':
+#2. Create a Database named 'natuechallenge':
 
-#2. Make a copy of .env.exemple to .env and edit .env file to connect the database:
+#3. Make a copy of .env.exemple to .env and edit .env file to connect the database:
 #Set database name, username and password:
         DB_CONNECTION=mysql    
         DB_HOST=127.0.0.1    
@@ -86,19 +86,19 @@ Make a fork of this repository, and send us a pull-request.
         DB_USERNAME=root    
         DB_PASSWORD=    
 
-#3. Run the command on cmd/terminal to create encryption key:
+#4. Run the command on cmd/terminal to create encryption key:
 
     php artisan key:generate
 
-#4. Run the command on cmd/terminal to create database tables and seeds:
+#5. Run the command on cmd/terminal to create database tables and seeds:
 
     php artisan migrate:refresh --seed
 
-#5. Run the command on cmd/terminal to run the project:
+#6. Run the command on cmd/terminal to run the project:
 
     php artisan serve
 
-#6. Access the project on browser 
+#7. Access the project on browser 
 
     http://127.0.0.1:8000/catalog
 
