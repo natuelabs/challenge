@@ -78,7 +78,7 @@ Make a fork of this repository, and send us a pull-request.
 #2. Access the project root folder:
     cd local.natuechallenge
 
-#3. Run the command on cmd/terminal to install dependencies:
+#3. Run the command on cmd/terminal to install dependencies:    
     composer install
 
 #4. Create a Database named 'natuechallenge':
