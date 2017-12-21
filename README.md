@@ -28,9 +28,9 @@ Make a fork of this repository, and send us a pull-request.
 
 ## Natue Challenge
 ## This test was made with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
-    - API Server was made with Laravel Resource;
-    - The .json data is provided by the Laravel Framework brought from the MySql database.
-    - API Client was made with AJAX,jQuery and Bootstrap.
+- API Server was made with Laravel Resource;
+- The .json data is provided by the Laravel Framework brought from the MySql database.
+- API Client was made with AJAX,jQuery and Bootstrap.
 
 ## Project Structure
     /database/migrations/
@@ -67,33 +67,33 @@ Make a fork of this repository, and send us a pull-request.
 
 ## To make this test work follow the steps:
 
-#Softwares dependencies:
+- Softwares dependencies:
 1. Install Composer to download the libs dependencies.
 2. Install MySql Database.    
 3. Install Xampp - To run a local server - Apache/MySql/PHP.
 4. Create a Database named 'natuechallenge'
 
-#Access the project root folder and run the command on cmd/terminal to install dependencies:
+- Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
 
-4. Make a copy of .env.exemple to .env and edit .env file to connect the database;
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=natuechallenge
-    DB_USERNAME=root
-    DB_PASSWORD=
+1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
+    ##DB_CONNECTION=mysql
+    ##DB_HOST=127.0.0.1
+    ##DB_PORT=3306
+    ##DB_DATABASE=natuechallenge
+    ##DB_USERNAME=root
+    ##DB_PASSWORD=
 
-5. Run the command on cmd/terminal to create database tables and seeds:
+2. Run the command on cmd/terminal to create database tables and seeds:
     php artisan migrate:refresh --seed
 
-5. Run the command on cmd/terminal to run the project:
+3. Run the command on cmd/terminal to run the project:
     php artisan serve
 
-6. Access the project on browser http://127.0.0.1:8000/catalog
+4. Access the project on browser http://127.0.0.1:8000/catalog
 
 An explanation of how to perform the tests;
-The View project has a simple layout where left side has a product list and right side there are a specifications filter.
-You can search for products and filter your specifications.
-You can order by price too just clicking in blue arrows above the prices.
-Enjoy!
+- The View project has a simple layout where left side has a product list and right side there are a specifications filter.
+- You can search for products and filter your specifications.
+- You can order by price too just clicking in blue arrows above the prices.
+- Enjoy!
