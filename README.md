@@ -69,9 +69,9 @@ Make a fork of this repository, and send us a pull-request.
 
 ## Softwares dependencies:
 #1. Install Composer to download the libs dependencies.    
-#2. To run a local server - Install Apache/MySql/PHP.
-#3. Or Install Xampp Stack.
-#4. Create a Database named 'natuechallenge'
+#2. To run a local server - Install Apache/MySql/PHP.    
+#3. Or Install Xampp Stack.    
+#4. Create a Database named 'natuechallenge'    
 
 ## Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
