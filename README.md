@@ -68,15 +68,15 @@ Make a fork of this repository, and send us a pull-request.
 ## To make this test work follow the steps:
 
 ## Softwares dependencies:
-1. Install Composer to download the libs dependencies.
-2. Install MySql Database.    
-3. Install Xampp - To run a local server - Apache/MySql/PHP.
-4. Create a Database named 'natuechallenge'
+## 1. Install Composer to download the libs dependencies.
+## 2. Install MySql Database.    
+## 3. Install Xampp - To run a local server - Apache/MySql/PHP.
+## 4. Create a Database named 'natuechallenge'
 
 ## Access the project root folder and run the command on cmd/terminal to install dependencies:
     composer install
 
-1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
+## 1. Make a copy of .env.exemple to .env and edit .env file to connect the database;
     DB_CONNECTION=mysql
 
     DB_HOST=127.0.0.1
@@ -89,15 +89,19 @@ Make a fork of this repository, and send us a pull-request.
 
     DB_PASSWORD=
 
-2. Run the command on cmd/terminal to create database tables and seeds:
+## 2. Run the command on cmd/terminal to create database tables and seeds:
+
     php artisan migrate:refresh --seed
 
-3. Run the command on cmd/terminal to run the project:
+## 3. Run the command on cmd/terminal to run the project:
+
     php artisan serve
 
-4. Access the project on browser http://127.0.0.1:8000/catalog
+## 4. Access the project on browser 
 
-An explanation of how to perform the tests;
+    http://127.0.0.1:8000/catalog
+
+## An explanation of how to perform the tests;
 - The View project has a simple layout where left side has a product list and right side there are a specifications filter.
 - You can search for products and filter your specifications.
 - You can order by price too just clicking in blue arrows above the prices.
