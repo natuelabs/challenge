@@ -67,7 +67,7 @@ Make a fork of this repository, and send us a pull-request.
 
 ## Softwares dependencies:
 #1. Install Composer to download the libs dependencies.    
-#2. To run a local server - Install Apache/MySql/PHP.    
+#2. Install Apache/MySql/PHP - To run a local server.    
 #3. Or Install Xampp Stack.    
 
 ## Follow the above steps to make the test work:
@@ -77,8 +77,8 @@ Make a fork of this repository, and send us a pull-request.
 
 #2. Create a Database named 'natuechallenge':
 
-#3. Make a copy of .env.exemple to .env and edit .env file to connect the database:
-#Set database name, username and password:
+#3. Make a copy of .env.exemple to .env and edit .env file to connect the database:    
+#Set database name, username and password:    
         DB_CONNECTION=mysql    
         DB_HOST=127.0.0.1    
         DB_PORT=3306        
