@@ -128,7 +128,7 @@ var Catalog = (function(){
 
     function specificationCheck(el){
         var str  = "<div class='specification-check'>";
-            str += "<input class='form-control' type='checkbox' name='specifications[]' value='"+el.id+"'>";
+            str += "<input class='form-control' type='checkbox' name='specifications[]' value='"+el.id+"' id='"+el.description+"'>";
             str += "<span class='badge "+el.description+"'>"+el.description+"</span>";
             str += "</div>";
 

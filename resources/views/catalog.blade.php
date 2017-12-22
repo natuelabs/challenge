@@ -29,7 +29,7 @@
                     <div class="panel-footer">
                         <div class="form-group">
                             <form name="GET" action="">
-                                <input class="btn btn-primary form-control pull-right" name="acao" type="submit">
+                                <input class="btn btn-primary form-control pull-right" name="acao" type="submit" id="bt-filter">
                             </form>
                         </div>
                     </div>
