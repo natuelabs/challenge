@@ -62,3 +62,7 @@ order
 This attribute is used to set the order of products at the price. The values that can be used are ASC and DESC
 
     http://localhost/api/products?order=asc
+    
+Url with both
+
+    http://localhost/api/products?q=vegan+lactose-free&order=asc
