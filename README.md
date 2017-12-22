@@ -137,9 +137,12 @@ Make a fork of this repository, and send us a pull-request.
 
         phpunit        
 
-- test_API_Status_Specification;
-- test_API_Status_ProductList
-- test_API_Status_ProductListWithFilter;
+- The final of execution tests you must have:
 
-OK (3 tests, 3 assertions)
+    - test_API_HTTPStatus_Specification;
+    - test_API_HTTPStatus_ProductList;
+    - test_API_HTTPStatus_ProductListWithFilter;
+
+    3 / 3 (100%)
+    OK (3 tests, 3 assertions)
 

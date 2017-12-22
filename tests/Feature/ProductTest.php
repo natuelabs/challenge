@@ -13,9 +13,9 @@ class ProductTest extends TestCase
      *
      * @return void
      */
-    public function test_API_Status_ProductList()
+    public function test_API_HTTPStatus_ProductList()
     {   
-        echo 'test_API_Status_ProductList';
+        echo 'test_API_HTTPStatus_ProductList';
         $response = $this->get('http://127.0.0.1:8000/api/product');
         $response->assertStatus(200);
     }
@@ -25,9 +25,9 @@ class ProductTest extends TestCase
      *
      * @return void
      */
-    public function test_API_Status_ProductListWithFilter()
+    public function test_API_HTTPStatus_ProductListWithFilter()
     {   
-        echo 'test_API_Status_ProductListWithFilter';
+        echo 'test_API_HTTPStatus_ProductListWithFilter';
         $response = $this->get('http://local.natuelabschallenge:8383/api/product?specifications[]=1&specifications[]=2&sOrderBy=asc');
         $response->assertStatus(200);
     }
