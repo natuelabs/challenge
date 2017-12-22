@@ -134,7 +134,8 @@ Make a fork of this repository, and send us a pull-request.
 ## An explanation of how to perform the tests;
 
 - Above we have some tests that will be executed:
-
+    
+        - HTTP Tests wit PHPunit
         - test_API_HTTPStatus_Specification;    
         - test_API_HTTPStatus_ProductList;
         - test_API_HTTPStatus_ProductListWithFilter;
@@ -142,16 +143,57 @@ Make a fork of this repository, and send us a pull-request.
         - test_API_AssertJSON_Product;
         - test_API_AssertJSON_ProductWithFilter;
 
-- Run the command on cmd/terminal to run the tests:
+        - Browser Tests with Laravel Dusk
+        - 
 
-        phpunit        
+- Run the command on cmd/terminal to run the HTTP tests:
+
+        phpunit --debug
 
 - The final of execution tests you must have:    
 
         PHPUnit 5.7.0 by Sebastian Bergmann and contributors.
 
-        ......                                                              6 / 6 (100%)
 
-        Time: 383 ms, Memory: 12.00MB
+        Starting test 'Tests\Feature\ProductTest::API_HTTPStatus_ProductList'.
+        .
+        Starting test 'Tests\Feature\ProductTest::API_HTTPStatus_ProductListWithFilter'.
+        .
+        Starting test 'Tests\Feature\ProductTest::API_AssertJSON_Product'.
+        .
+        Starting test 'Tests\Feature\ProductTest::API_AssertJSON_ProductWithFilter'.
+        .
+        Starting test 'Tests\Feature\SpecificationTest::API_HTTPStatus_Specification'.
+        .
+        Starting test 'Tests\Feature\SpecificationTest::API_AssertJSON_Specification'.
+        .                                                              6 / 6 (100%)
+
+        Time: 311 ms, Memory: 12.00MB
 
         OK (6 tests, 6 assertions)
+
+- Before start Browser tests edit .env file and set:
+
+        APP_URL=http://127.0.0.1:8000
+
+- Run the command on cmd/terminal to run the Browser tests:
+
+        php artisan dusk --debug
+
+- The final of execution tests you must have:    
+
+        Warning: TTY mode is not supported on Windows platform.
+        PHPUnit 5.7.0 by Sebastian Bergmann and contributors.
+
+        Runtime:       PHP 7.1.9
+        Configuration: C:\xampp\htdocs\local.natuelabschallenge\phpunit.dusk.xml
+
+
+        Starting test 'Tests\Browser\AccessCatalogTest::testAccessCatalog'.
+
+        DevTools listening on ws://127.0.0.1:12406/devtools/browser/d1e43880-0eca-4ecc-9492-ee6c9c4d63be
+        .                                                                   1 / 1 (100%)
+
+        Time: 25.3 seconds, Memory: 10.00MB
+
+        OK (1 test, 1 assertion)
