@@ -133,16 +133,25 @@ Make a fork of this repository, and send us a pull-request.
 
 ## An explanation of how to perform the tests;
 
+- Tests that will be executed:
+
+        - test_API_HTTPStatus_Specification;    
+        - test_API_HTTPStatus_ProductList;
+        - test_API_HTTPStatus_ProductListWithFilter;
+        - test_API_AssertJSON_Specification;
+        - test_API_AssertJSON_Product;
+        - test_API_AssertJSON_ProductWithFilter;
+
 - Run the command on cmd/terminal to run the tests:
 
         phpunit        
 
-- The final of execution tests you must have:
+- The final of execution tests you must have:    
 
-    - test_API_HTTPStatus_Specification;
-    - test_API_HTTPStatus_ProductList;
-    - test_API_HTTPStatus_ProductListWithFilter;
+        PHPUnit 5.7.0 by Sebastian Bergmann and contributors.
 
-    3 / 3 (100%)
-    OK (3 tests, 3 assertions)
+        ......                                                              6 / 6 (100%)
 
+        Time: 383 ms, Memory: 12.00MB
+
+        OK (6 tests, 6 assertions)
