@@ -136,15 +136,15 @@ Make a fork of this repository, and send us a pull-request.
 - Above we have some tests that will be executed:
     
         - HTTP Tests wit PHPunit
-        - test_API_HTTPStatus_Specification;    
-        - test_API_HTTPStatus_ProductList;
-        - test_API_HTTPStatus_ProductListWithFilter;
-        - test_API_AssertJSON_Specification;
-        - test_API_AssertJSON_Product;
-        - test_API_AssertJSON_ProductWithFilter;
+        - API_HTTPStatus_Specification;    
+        - API_HTTPStatus_ProductList;
+        - API_HTTPStatus_ProductListWithFilter;
+        - API_AssertJSON_Specification;
+        - API_AssertJSON_Product;
+        - API_AssertJSON_ProductWithFilter;
 
         - Browser Tests with Laravel Dusk
-        - 
+        - AccessCatalogPage
 
 - Run the command on cmd/terminal to run the HTTP tests:
 
@@ -185,15 +185,14 @@ Make a fork of this repository, and send us a pull-request.
         Warning: TTY mode is not supported on Windows platform.
         PHPUnit 5.7.0 by Sebastian Bergmann and contributors.
 
-        Runtime:       PHP 7.1.9
-        Configuration: C:\xampp\htdocs\local.natuelabschallenge\phpunit.dusk.xml
 
+        Starting test 'Tests\Browser\CatalogTest::AccessCatalogPage'.
 
-        Starting test 'Tests\Browser\AccessCatalogTest::testAccessCatalog'.
+        DevTools listening on ws://127.0.0.1:12071/devtools/browser/927358bc-b16f-458a-9ad7-96d7fbd952bd
+        .
+        Starting test 'Tests\Browser\CatalogTest::VerifyProductListItens'.
+        .
+        Starting test 'Tests\Browser\CatalogTest::VerifyProductListItensFilter'.
+        .                                                                 3 / 3 (100%)
 
-        DevTools listening on ws://127.0.0.1:12406/devtools/browser/d1e43880-0eca-4ecc-9492-ee6c9c4d63be
-        .                                                                   1 / 1 (100%)
-
-        Time: 25.3 seconds, Memory: 10.00MB
-
-        OK (1 test, 1 assertion)
+        Time: 29.27 seconds, Memory: 10.00MB
