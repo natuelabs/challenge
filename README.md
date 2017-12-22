@@ -28,23 +28,23 @@ Make a fork of this repository, and send us a pull-request.
 
 ## Natue Challenge
 ## This test was made with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
-- API Server was made with Laravel Resource;
+- API Server was made with Laravel;
 - The .json data is provided by the Laravel Framework brought from the MySql database.
 - API Client was made with AJAX,jQuery and Bootstrap.
 
 ## Project Structure
-    /database/migrations/
+    /database/migrations/ to create the database structure;
         create_products_table.php
         create_specifications_table.php
         create_products_specifications_table.php
 
-    /database/seeds/
+    /database/seeds/ to populate the database:
         DatabaseSeeder.php
         ProductsSpecificationsTableSeeder.php
         ProductsTableSeeder.php
         SpecificationsTableSeeder.php
 
-    /routes
+    /routes to define requests:
         api.php
         web.php
 
@@ -132,6 +132,7 @@ Make a fork of this repository, and send us a pull-request.
         http://127.0.0.1:8000/catalog
 
 ## An explanation of how to perform the tests;
+
 - The View project has a simple layout where left side has a product list and right side there are a specifications filter.
 - You can search for products and filter your specifications.
 - You can order by price too just clicking in blue arrows above the prices.
