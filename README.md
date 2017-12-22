@@ -133,7 +133,13 @@ Make a fork of this repository, and send us a pull-request.
 
 ## An explanation of how to perform the tests;
 
-- The View project has a simple layout where left side has a product list and right side there are a specifications filter.
-- You can search for products and filter your specifications.
-- You can order by price too just clicking in blue arrows above the prices.
-- Enjoy!
+- Run the command on cmd/terminal to run the tests:
+
+        phpunit        
+
+- test_API_Status_Specification;
+- test_API_Status_ProductList
+- test_API_Status_ProductListWithFilter;
+
+OK (3 tests, 3 assertions)
+
