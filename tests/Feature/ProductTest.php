@@ -14,8 +14,7 @@ class ProductTest extends TestCase
      * @return void
      */
     public function test_API_HTTPStatus_ProductList()
-    {   
-        // echo 'test_API_HTTPStatus_ProductList';
+    {
         $response = $this->get('http://127.0.0.1:8000/api/product');
         $response->assertStatus(200);
     }
@@ -27,7 +26,6 @@ class ProductTest extends TestCase
      */
     public function test_API_HTTPStatus_ProductListWithFilter()
     {   
-        // echo 'test_API_HTTPStatus_ProductListWithFilter';
         $response = $this->get('http://127.0.0.1:8000/api/product?specifications[]=2&sOrderBy=asc');
         $response->assertStatus(200);
     }
@@ -39,7 +37,6 @@ class ProductTest extends TestCase
      */
     public function test_API_AssertJSON_Product()
     {
-        // echo 'test_API_AssertJSON_Product';
         $this->get('http://127.0.0.1:8000/api/product')
              ->assertJson(
                 [
@@ -462,9 +459,8 @@ class ProductTest extends TestCase
      */
     public function test_API_AssertJSON_ProductWithFilter()
     {
-        // echo 'test_API_AssertJSON_ProductWithFilter';
         $this->get('http://127.0.0.1:8000/api/product?specifications[]=2&sOrderBy=asc')
-             ->assertJson(
+             ->assertExactJson(
                 [
                     [
                         "id" => 12,
