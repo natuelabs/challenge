@@ -13,7 +13,7 @@ class SpecificationTest extends TestCase
      *
      * @return void
      */
-    public function test_API_HTTPStatus_Specification()
+    public function API_HTTPStatus_Specification()
     {
         $response = $this->get('http://127.0.0.1:8000/api/specification');
         $response->assertStatus(200);
@@ -24,7 +24,7 @@ class SpecificationTest extends TestCase
      *
      * @return void
      */
-    public function test_API_AssertJSON_Specification()
+    public function API_AssertJSON_Specification()
     {
         $this->get('http://127.0.0.1:8000/api/specification')
              ->assertExactJson(
