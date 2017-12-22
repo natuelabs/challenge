@@ -133,7 +133,7 @@ Make a fork of this repository, and send us a pull-request.
 
 ## An explanation of how to perform the tests;
 
-- Tests that will be executed:
+- Above we have some tests that will be executed:
 
         - test_API_HTTPStatus_Specification;    
         - test_API_HTTPStatus_ProductList;
