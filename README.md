@@ -145,6 +145,8 @@ Make a fork of this repository, and send us a pull-request.
 
         - Browser Tests with Laravel Dusk
         - AccessCatalogPage
+        - VerifyProductListItens
+        - VerifyProductListItensFilter
 
 - Run the command on cmd/terminal to run the HTTP tests:
 

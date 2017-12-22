@@ -59,6 +59,5 @@ class CatalogTest extends DuskTestCase
                     ->assertSee('Chips de milho')
                     ->pause(3000);
         });
-    }
-    
+    }    
 }
