@@ -10,54 +10,48 @@ class CatalogTest extends DuskTestCase
 {
     /**
      * @test
-     * A access catalog page test.
+     * Verify access Catalog page.
+     * Verify product list, filter and order.
      *
      * @return void
      */
-    public function AccessCatalogPage()
+    public function VerifyProductListAndFilter()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/catalog')
-                    ->assertSee('Produtos');
-        });
-    }
-
-    /**
-     * @test
-     * Verify product list itens.
-     *
-     * @return void
-     */
-    public function VerifyProductListItens()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/catalog')
-                    ->pause(5000)
-                    ->assertSee('Barrinhas');
-        });
-    }
-
-    /**
-     * @test
-     * Verify product list itens filter.
-     *
-     * @return void
-     */
-    public function VerifyProductListItensFilter()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/catalog')
-                    ->assertSee('Barrinhas')
-                    ->pause(3000)
+                    ->assertSee('Produtos')                    
+                    ->assertSee('Sopa de morango')
+                    ->pause(2000)
+                    
+                    ->check('#low-carb')
+                    ->pause(2000)
+                    ->click('#bt-filter')
+                    ->assertSee('Sopa de castanha do pará')
+                    ->pause(2000)                    
+                    ->uncheck('#low-carb')
+                    ->pause(2000)
+                    
+                    ->check('#gluten-free')
+                    ->pause(2000)
+                    ->click('#bt-filter')
+                    ->assertSee('Cápsulas de limão')
+                    ->pause(2000)                    
+                    ->uncheck('#gluten-free')
+                    ->pause(2000)
+                    
                     ->check('#vegetarian')
-                    ->pause(3000)
+                    ->pause(2000)
                     ->click('#bt-filter')
                     ->assertSee('Cápsulas de milho')
-                    ->pause(3000)
+                    ->pause(2000)
+                    ->uncheck('#vegetarian')
+                    ->pause(2000)
+                    ->click('#bt-filter')
+
                     ->click('#orderBy')
-                    ->pause(3000)
-                    ->assertSee('Chips de milho')
-                    ->pause(3000);
+                    ->pause(4000)
+                    ->click('#orderBy')
+                    ->pause(2000);
         });
     }    
 }
