@@ -97,7 +97,7 @@ Make a fork of this repository, and send us a pull-request.
 
         cd local.natuechallenge
 
-- Run command on Cmder/terminal to install dependencies:
+- Run command on Cmder or Cmd to install dependencies:
 
         composer install
 
@@ -105,7 +105,7 @@ Make a fork of this repository, and send us a pull-request.
 
         natuechallenge
 
-- Run command on Cmder/terminal to make a copy of .env.exemple to .env:
+- Run command on Cmder or Cmd to make a copy of .env.exemple to .env:
 
         cp .env.example .env
 
@@ -119,11 +119,11 @@ Make a fork of this repository, and send us a pull-request.
         DB_USERNAME=root    
         DB_PASSWORD=    
 
-- Run command on Cmder/terminal to create encryption key:
+- Run command on Cmder or Cmd to create encryption key:
 
         php artisan key:generate
 
-- Run command on Cmder/terminal to create database tables and seeds:
+- Run command on Cmder or Cmd to create database tables and seeds:
 
         php artisan migrate --seed
         
@@ -131,7 +131,7 @@ Make a fork of this repository, and send us a pull-request.
 
         php artisan migrate:refresh --seed
 
-- Run command on Cmder/terminal to run the project:
+- Run command on Cmder or Cmd to run the project:
 
         php artisan serve
 
@@ -155,7 +155,7 @@ Make a fork of this repository, and send us a pull-request.
         - CatalogTest
         - VerifyProductListAndFilter
 
-- Run command on Cmder/terminal to run the HTTP tests:
+- Open another Cmder or Cmd instance to run the HTTP tests without stop the previous service in http://127.0.0.1:8000/catalog:
 
         phpunit --debug
 
@@ -181,7 +181,7 @@ Make a fork of this repository, and send us a pull-request.
 
         OK (6 tests, 6 assertions)        
 
-- Run command on Cmder/terminal to run the Browser tests:
+- Run command on Cmder or Cmd to run the Browser tests:
 
         php artisan dusk --debug
 
