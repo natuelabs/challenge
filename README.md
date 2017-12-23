@@ -83,7 +83,7 @@ Make a fork of this repository, and send us a pull-request.
 
     https://www.apachefriends.org/pt_br/download.html
 
-#3. Install Cmder or use cmd to run commands in terminal on Windows:
+#3. Install Cmder or use Cmd to run commands in terminal on Windows:
 
     http://cmder.net/
 
