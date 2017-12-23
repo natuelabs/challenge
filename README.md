@@ -25,9 +25,9 @@ Remember that at the time of the evaluation we will look at:
 To send us your code, you must:
 
 Make a fork of this repository, and send us a pull-request.
-
+## # 
 ## Natue Challenge
-## This test was made with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
+## This test was develop with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
 - API Server was made with Laravel;
 - The .json data is provided by Laravel brought from the MySql database.
 - API Client was made with AJAX,jQuery and Bootstrap.
