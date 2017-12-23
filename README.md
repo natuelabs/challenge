@@ -29,8 +29,9 @@ Make a fork of this repository, and send us a pull-request.
 ## Natue Challenge
 ## This test was made with Windows 7, Apache, Laravel Framework 5.5, MySql, AJAX, jQuery, Javascript and Bootstrap.
 - API Server was made with Laravel;
-- The .json data is provided by the Laravel Framework brought from the MySql database.
+- The .json data is provided by Laravel brought from the MySql database.
 - API Client was made with AJAX,jQuery and Bootstrap.
+- Tests was applied with PHPUnit and Laravel Dusk.   
 
 ## Project Structure
     /database/migrations/ to create the database structure;
@@ -64,6 +65,14 @@ Make a fork of this repository, and send us a pull-request.
     /public
         /css/catalog.css
         /js/catalog.js
+
+    /tests/
+        /Browser/
+            CatalogTest.php
+        /Feature/
+            ProductTest.php
+            SpecificationTest.php
+
 
 ## Softwares dependencies:
 #1. Install Composer to download the libs dependencies:
@@ -111,6 +120,10 @@ Make a fork of this repository, and send us a pull-request.
         DB_USERNAME=root    
         DB_PASSWORD=    
 
+        Set address config:
+
+        APP_URL=http://127.0.0.1:8000
+
 - Run the command on cmd/terminal to create encryption key:
 
         php artisan key:generate
@@ -135,7 +148,7 @@ Make a fork of this repository, and send us a pull-request.
 
 - Above we have some tests that will be executed:
     
-        - HTTP Tests wit PHPunit
+        HTTP Tests wit PHPunit
         - API_HTTPStatus_Specification;    
         - API_HTTPStatus_ProductList;
         - API_HTTPStatus_ProductListWithFilter;
@@ -143,10 +156,9 @@ Make a fork of this repository, and send us a pull-request.
         - API_AssertJSON_Product;
         - API_AssertJSON_ProductWithFilter;
 
-        - Browser Tests with Laravel Dusk
-        - AccessCatalogPage
-        - VerifyProductListItens
-        - VerifyProductListItensFilter
+        Browser Tests with Laravel Dusk
+        - CatalogTest
+        - VerifyProductListAndFilter
 
 - Run the command on cmd/terminal to run the HTTP tests:
 
@@ -172,11 +184,7 @@ Make a fork of this repository, and send us a pull-request.
 
         Time: 311 ms, Memory: 12.00MB
 
-        OK (6 tests, 6 assertions)
-
-- Before start Browser tests edit .env file and set:
-
-        APP_URL=http://127.0.0.1:8000
+        OK (6 tests, 6 assertions)        
 
 - Run the command on cmd/terminal to run the Browser tests:
 
@@ -188,13 +196,11 @@ Make a fork of this repository, and send us a pull-request.
         PHPUnit 5.7.0 by Sebastian Bergmann and contributors.
 
 
-        Starting test 'Tests\Browser\CatalogTest::AccessCatalogPage'.
-
-        DevTools listening on ws://127.0.0.1:12071/devtools/browser/927358bc-b16f-458a-9ad7-96d7fbd952bd
-        .
-        Starting test 'Tests\Browser\CatalogTest::VerifyProductListItens'.
-        .
         Starting test 'Tests\Browser\CatalogTest::VerifyProductListItensFilter'.
-        .                                                                 3 / 3 (100%)
 
-        Time: 29.27 seconds, Memory: 10.00MB
+        DevTools listening on ws://127.0.0.1:12018/devtools/browser/4ff9da70-68dd-4c8c-a9fb-3e427d1552c3
+        .                                                                   1 / 1 (100%)
+
+        Time: 38.82 seconds, Memory: 10.00MB
+
+        OK (1 test, 5 assertions)
