@@ -97,7 +97,7 @@ Make a fork of this repository, and send us a pull-request.
 
         cd local.natuechallenge
 
-- Run the command on cmd/terminal to install dependencies:
+- Run command on Cmder/terminal to install dependencies:
 
         composer install
 
@@ -110,9 +110,8 @@ Make a fork of this repository, and send us a pull-request.
         cp .env.example .env
 
 - Edit .env file to connect the database:
-
-        Set database name, username and password:
         
+        APP_URL=http://127.0.0.1:8000
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1    
         DB_PORT=3306        
@@ -120,15 +119,11 @@ Make a fork of this repository, and send us a pull-request.
         DB_USERNAME=root    
         DB_PASSWORD=    
 
-        Set address config:
-
-        APP_URL=http://127.0.0.1:8000
-
-- Run the command on cmd/terminal to create encryption key:
+- Run command on Cmder/terminal to create encryption key:
 
         php artisan key:generate
 
-- Run the command on cmd/terminal to create database tables and seeds:
+- Run command on Cmder/terminal to create database tables and seeds:
 
         php artisan migrate --seed
         
@@ -136,7 +131,7 @@ Make a fork of this repository, and send us a pull-request.
 
         php artisan migrate:refresh --seed
 
-- Run the command on cmd/terminal to run the project:
+- Run command on Cmder/terminal to run the project:
 
         php artisan serve
 
@@ -160,7 +155,7 @@ Make a fork of this repository, and send us a pull-request.
         - CatalogTest
         - VerifyProductListAndFilter
 
-- Run the command on cmd/terminal to run the HTTP tests:
+- Run command on Cmder/terminal to run the HTTP tests:
 
         phpunit --debug
 
@@ -186,7 +181,7 @@ Make a fork of this repository, and send us a pull-request.
 
         OK (6 tests, 6 assertions)        
 
-- Run the command on cmd/terminal to run the Browser tests:
+- Run command on Cmder/terminal to run the Browser tests:
 
         php artisan dusk --debug
 
