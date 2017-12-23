@@ -83,7 +83,7 @@ Make a fork of this repository, and send us a pull-request.
 
     https://www.apachefriends.org/pt_br/download.html
 
-#3. Install Cmder to run commands in terminal on Windows:
+#3. Install Cmder or use cmd to run commands in terminal on Windows:
 
     http://cmder.net/
 
@@ -105,7 +105,7 @@ Make a fork of this repository, and send us a pull-request.
 
         natuechallenge
 
-- Make a copy of .env.exemple to .env:
+- Run command on Cmder/terminal to make a copy of .env.exemple to .env:
 
         cp .env.example .env
 
