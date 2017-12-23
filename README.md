@@ -181,7 +181,7 @@ Make a fork of this repository, and send us a pull-request.
 
         OK (6 tests, 6 assertions)        
 
-- Run command on Cmder or Cmd to run the Browser tests:
+- Run command on Cmder or Cmd to run the Browser automated tests:
 
         php artisan dusk --debug
 
