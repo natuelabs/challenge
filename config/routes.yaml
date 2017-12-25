@@ -1,3 +1,16 @@
 index:
-   path: /
-   controller: App\Controller\DefaultController::index
+   path: /products
+   controller: App\Controller\ProductController::index
+   methods: [GET]
+
+all:
+   path: /products/all
+   controller: App\Controller\ProductController::all
+   methods: [GET]
+
+one:
+    path: /products/{id}
+    controller: App\Controller\ProductController::one
+    methods: [GET]
+    requirements:
+        id: '\d+'
