@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Adapter;
+namespace App\Service;
 
 interface AdapterInterface
 {

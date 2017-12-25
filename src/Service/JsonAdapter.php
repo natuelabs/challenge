@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Adapter;
+namespace App\Service;
 
-use App\Adapter\AdapterInterface;
+use App\Service\AdapterInterface;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
