@@ -67,7 +67,7 @@ class JsonAdapter implements AdapterInterface
         $items = array();
 
         if ($sort)
-            sort($sort);
+            $this->sortArray($sort);
 
         foreach ($this->object as $item) {
             if (array_intersect($specifications, $item->specifications)) {
