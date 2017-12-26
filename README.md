@@ -6,24 +6,18 @@
 
 ## Challenge for Backend Developer
 
-A customer needs to search in our product catalog (available in this <a href="https://github.com/natuelabs/challenge/blob/master/products.json">JSON</a>) and he wants to find products that match your food restrictions.
-Based on this you will need to develop:
+To run this project, you must have *PHP 7.1+* and *PHPUnit 6.5*
 
-- a simple API to search products in the .json available;
-- it should be possible to search for products by their specifications (one or more);
-- it must be possible to order the result by price (asc and desc);
+Download the project, run `composer install` to install all dependencies, them `php bin/console server:run` to start the buildin webserver, and then try it out the following URLs:
 
-The test should be done in PHP. We expect at the end of the test, outside the API running, the following items:
+http://localhost:8000/products/15 - fetch a product by ID
+http://localhost:8000/products/all - fetch all products
+http://localhost:8000/products/all?sort=desc - fetch all products with desc order
+http://localhost:8000/products/all?sort=asc - fetch all products with asc order
+[http://localhost:8000/products?name=Chips de milho](http://localhost:8000/products?name=Chips%20de%20milho) - fetch a product with the specific name
+[http://localhost:8000/products?specifications=vegan, low-carb](http://localhost:8000/products?specifications=vegan,%20low-carb) - fetch all products with these components
+[http://localhost:8000/products?sort=desc&specifications=vegan, low-carb](http://localhost:8000/products?sort=desc&specifications=vegan,%20low-carb) - fetch all products with these components in desc order
 
-- an explanation of what is needed to make your project work;
-- an explanation of how to perform the tests;
+For unit tests, run the following command at the project root folder `phpunit`
 
-Remember that at the time of the evaluation we will look at:
-
-- Code organization;
-- Object-Oriented Principles;
-- Maintenance;
-
-To send us your code, you must:
-
-Make a fork of this repository, and send us a pull-request.
+Thanks! *May the force be with you*
