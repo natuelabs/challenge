@@ -13,7 +13,7 @@ Based on this you will need to develop:
 - it should be possible to search for products by their specifications (one or more);
 - it must be possible to order the result by price (asc and desc);
 
-The test should be done in PHP. We expect at the end of the test, outside the API running, the following items:
+The test should be done in PHP, Python or NodeJS and we like if you avoid frameworks like our app examples. We expect at the end of the test, outside the API running, the following items:
 
 - an explanation of what is needed to make your project work;
 - an explanation of how to perform the tests;
