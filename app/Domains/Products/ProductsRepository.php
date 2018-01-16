@@ -55,7 +55,8 @@ class ProductsRepository
             ->pluck('specifications')
             ->flatten()
             ->unique()
-            ->sort();
+            ->sort()
+            ->flatten();
     }
 
     /**

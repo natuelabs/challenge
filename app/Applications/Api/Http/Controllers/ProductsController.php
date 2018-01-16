@@ -68,4 +68,13 @@ class ProductsController extends BaseController
 
         return $this->response->item($product, new ProductTransform());
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function availableSpecifications()
+    {
+        $specifications = (new ProductsRepository($this->collector))->getAllAvailableSpecifications();
+        return $this->response->raw($specifications, count($specifications));
+    }
 }
