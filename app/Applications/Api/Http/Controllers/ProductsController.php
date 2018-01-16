@@ -44,6 +44,17 @@ class ProductsController extends BaseController
     }
 
     /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function search()
+    {
+        $specifications = $this->request->get('specifications');
+
+        $products = (new ProductsRepository($this->collector))->getAllBySpecifications($specifications, $this->sortBy, $this->order);
+        return $this->response->collection($products, new ProductTransform());
+    }
+
+    /**
      * Show a product.
      *
      * @param $id

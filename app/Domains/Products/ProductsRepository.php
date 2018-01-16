@@ -31,10 +31,7 @@ class ProductsRepository
     public function getAll($sortBy, $order)
     {
         $items = $this->sortProducts($sortBy, $order);
-
-        return $items->map(function ($item) {
-            return $this->convertToProduct($item);
-        });
+        return $this->mapProducts($items);
     }
 
     /**
@@ -65,20 +62,36 @@ class ProductsRepository
      * Get all products by specifications separated by comma.
      *
      * @param $wantedSpecifications
+     * @param $sortBy
+     * @param $order
      * @return Collection
      */
-    public function getAllBySpecifications($wantedSpecifications)
+    public function getAllBySpecifications($wantedSpecifications, $sortBy, $order)
     {
+        $items = $this->sortProducts($sortBy, $order);
+
+        if (is_null($wantedSpecifications)) {
+            return $this->mapProducts($items);
+        }
+
         $wantedSpecifications = explode(
             ',',
             preg_replace('/\s+/', '', $wantedSpecifications)
         );
 
-        return $this->products->filter(function ($item) use ($wantedSpecifications) {
+        $filter = function ($item) use ($wantedSpecifications) {
+            $match = null;
+
             foreach ($wantedSpecifications as $specification) {
-                return false !== stristr(implode(",", $item->specifications), $specification);
+                $match = stristr(implode(",", $item->specifications), $specification);
             }
-        });
+
+            return $match;
+        };
+
+        $items = $items->filter($filter)->flatten();
+
+        return $this->mapProducts($items);
     }
 
     /**
@@ -93,6 +106,8 @@ class ProductsRepository
     }
 
     /**
+     * Sort collection by key.
+     *
      * @param $sortBy
      * @param $order
      * @return Collection|array|mixed|static
@@ -111,5 +126,16 @@ class ProductsRepository
             $items = $items->sortByDesc($sortBy)->flatten();
         }
         return $items;
+    }
+
+    /**
+     * @param Collection $items
+     * @return Collection
+     */
+    private function mapProducts(Collection $items)
+    {
+        return $items->map(function ($item) {
+            return $this->convertToProduct($item);
+        });
     }
 }
