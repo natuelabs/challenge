@@ -36,6 +36,19 @@ class ApiResponse
     }
 
     /**
+     * @return array
+     */
+    private function headers()
+    {
+        header_remove("X-Powered-By");
+
+        return [
+            'Content-Type' => $this->contentType,
+            'X-Powered-By' => 'Natue Challenge API',
+        ];
+    }
+
+    /**
      * Response success with a collection.
      *
      * @param Collection $collection
@@ -45,17 +58,12 @@ class ApiResponse
     public function collection(Collection $collection, TransformInterface $transform)
     {
         $this->data = Transform::collection($collection, $transform);
-
-        return new Response($this->collectionResponseStructure(), 200, [
-            'Content-type' => $this->contentType
-        ]);
+        return new Response($this->collectionResponseStructure(), 200, $this->headers());
     }
 
     public function item($item, TransformInterface $transform)
     {
         $this->data = Transform::item($item, $transform);
-        return new Response($this->collectionResponseStructure(), 200, [
-            'Content-type' => $this->contentType
-        ]);
+        return new Response($this->collectionResponseStructure(), 200, $this->headers());
     }
 }
