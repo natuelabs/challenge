@@ -20,13 +20,13 @@ if (! function_exists('storage_path')) {
 
 if (! function_exists('dd')) {
     /**
-     * Dump and Die a content.
+     * Dump and Die arguments.
      *
-     * @param array ...$content
+     * @param array ...$args
      */
-    function dd(...$content) {
+    function dd(...$args) {
         echo "<pre>";
-        var_dump($content);
+        var_dump($args);
         echo "</pre>";
         die();
     }
