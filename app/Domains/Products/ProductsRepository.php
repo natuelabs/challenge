@@ -4,7 +4,6 @@ namespace App\Domains\Products;
 
 use App\Support\Collection;
 use App\Support\DataCollector\DataCollector;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ProductsRepository
 {
