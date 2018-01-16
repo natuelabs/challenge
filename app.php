@@ -19,5 +19,3 @@ $response = $app->handle($request);
 if (! is_null($response)) {
     $response->send();
 }
-
-
