@@ -39,14 +39,16 @@ class ProductsController extends BaseController
      */
     public function all()
     {
-        $products = (new ProductsRepository($this->collector))->getAll($this->sortBy, $this->order);
+        $name = $this->request->get('name');
+
+        $products = (new ProductsRepository($this->collector))->getAll($name, $this->sortBy, $this->order);
         return $this->response->collection($products, new ProductTransform());
     }
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function search()
+    public function searchBySpecifications()
     {
         $specifications = $this->request->get('specifications');
 

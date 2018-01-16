@@ -5,9 +5,15 @@ $app->get(
     ['uses' => 'App\Applications\Api\Http\Controllers\ProductsController@all']
 );
 
+
 $app->get(
-    '/api/v1/products/search',
-    ['uses' => 'App\Applications\Api\Http\Controllers\ProductsController@search']
+    '/api/v1/products/search-by-name',
+    ['uses' => 'App\Applications\Api\Http\Controllers\ProductsController@all']
+);
+
+$app->get(
+    '/api/v1/products/search-by-specifications',
+    ['uses' => 'App\Applications\Api\Http\Controllers\ProductsController@searchBySpecifications']
 );
 
 $app->get(

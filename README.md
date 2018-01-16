@@ -61,9 +61,15 @@ composer install && php -S localhost:8080 app.php
    - **url**: [http://localhost:8080/api/v1/products?sortBy={fieldName}&order={order}](http://localhost:8080/api/v1/products?sortBy={fieldName}&order={order})<br>
    - **{sortBy} options**: id, name, price, specifications*
    - **{order} options**: asc, desc
+   
+  * **Search products by name** 
+    - **url**: [http://localhost:8080/api/v1/products/search-by-name?name={name}&sortBy={sortBy}&order={order}](http://localhost:8080/api/v1/products/search-by-name?name={name}&sortBy={sortBy}&order={order})
+    - **{name} options**: any keyword.
+    - **{sortBy} options**: id, name, price, specifications*
+    - **{order} options**: asc, desc
      
  * **Search products by specifications (work separated by comma)** 
-   - **url**: [http://localhost:8080/api/v1/products/search?specifications={specifications}&sortBy={sortBy}&order={order}](http://localhost:8080/api/v1/products/search?specifications={specifications}&sortBy={sortBy}&order={order})
+   - **url**: [http://localhost:8080/api/v1/products/search-by-specifications?specifications={specifications}&sortBy={sortBy}&order={order}](http://localhost:8080/api/v1/products/search-by-specifications?specifications={specifications}&sortBy={sortBy}&order={order})
    - **{specifications} options**: one or more than one item of the [specifications](#specifications) list.
    - **{sortBy} options**: id, name, price, specifications*
    - **{order} options**: asc, desc

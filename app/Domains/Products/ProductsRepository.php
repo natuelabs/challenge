@@ -24,13 +24,21 @@ class ProductsRepository
     /**
      * Get all products.
      *
+     * @param $keyword
      * @param $sortBy
      * @param $order
      * @return Collection
      */
-    public function getAll($sortBy, $order)
+    public function getAll($keyword, $sortBy, $order)
     {
         $items = $this->sortProducts($sortBy, $order);
+
+        if (! is_null($keyword)) {
+            $items = $items->filter(function ($item) use ($keyword) {
+                return false !== stristr($item->name, $keyword);
+            })->flatten();
+        }
+
         return $this->mapProducts($items);
     }
 
