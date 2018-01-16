@@ -2,11 +2,12 @@
 
 namespace App\Applications\Api\Http\Controllers;
 
+use App\Framework\Http\Controller;
 use App\Support\Api\ApiResponse;
 use App\Support\DataCollector\DataCollector;
 use Symfony\Component\HttpFoundation\Request;
 
-class BaseController
+class BaseController extends Controller
 {
     /**
      * @var DataCollector
@@ -19,17 +20,13 @@ class BaseController
     protected $response;
 
     /**
-     * @var Request
-     */
-    protected $request;
-
-    /**
      * BaseProductService constructor.
      * @param Request $request
      */
     public function __construct(Request $request)
     {
-        $this->request = $request;
+        parent::__construct($request);
+
         $this->collector = new DataCollector(storage_path('products.json'));
         $this->response = new ApiResponse();
     }
