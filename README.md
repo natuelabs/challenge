@@ -35,21 +35,32 @@ Make a fork of this repository, and send us a pull-request.
  * Composer >= 1.4
  * PHP >= 7.0
  
-No database is required.
+> No database is required.
  
 ### How to run
 
 Respecting the challenge determinations, the start point to this applications occur in **``` app.php ```**. 
 
 ```php
-   composer install && php -S localhost:8080 app.php
+composer install && php -S localhost:8080 app.php
 ```
 
 ## API Resources Endpoint
 
 ### Products
 
- * Get all products [http://localhost:8080/api/v1/products](http://localhost:8080/api/v1/products)
- * Get all products sorting by ANY field [http://localhost:8080/api/v1/products?sortBy={fieldName}&order={asc|desc}](http://localhost:8080/api/v1/products?sortBy={fieldName}&order={desc:asc|desc})
+ * **Get all products** 
+   - **url**: [http://localhost:8080/api/v1/products](http://localhost:8080/api/v1/products)
  
- If ordering occurs through the specifications field, the system will not sort it alphabetically. Because specifications are an array, sorting will occur by counting items in the array. 
+ * **Get all products sorting by ANY field**
+   - **url**: [http://localhost:8080/api/v1/products?sortBy={fieldName}&order={order}](http://localhost:8080/api/v1/products?sortBy={fieldName}&order={order})<br>
+   - **{sortBy} options**: id, name, price, specifications*
+   - **{order} options**: asc, desc
+     
+ * **Search products by specifications (work separated by comma)** 
+   - **url**: [http://localhost:8080/api/v1/products/search?specifications={specifications}&sortBy={sortBy}&order={order}](http://localhost:8080/api/v1/products/search?specifications={specifications}&sortBy={sortBy}&order={order})
+   - **{specifications} options**: one or more than one item of the specifications list.
+   - **{sortBy} options**: id, name, price, specifications*
+   - **{order} options**: asc, desc
+   
+ > (*) If ordering occurs through the specifications field, the system will not sort it alphabetically. Because specifications are an array, sorting will occur by counting items in the array.
