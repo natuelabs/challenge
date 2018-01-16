@@ -1,5 +1,6 @@
 <?php
 namespace App\Support;
+
 /**
  * @mixin \App\Support\Collection
  */

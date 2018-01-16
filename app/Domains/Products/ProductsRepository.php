@@ -70,8 +70,8 @@ class ProductsRepository
             preg_replace('/\s+/', '', $wantedSpecifications)
         );
 
-        return $this->products->filter(function($item) use ($wantedSpecifications) {
-            foreach($wantedSpecifications as $specification) {
+        return $this->products->filter(function ($item) use ($wantedSpecifications) {
+            foreach ($wantedSpecifications as $specification) {
                 return false !== stristr(implode(",", $item->specifications), $specification);
             }
         });

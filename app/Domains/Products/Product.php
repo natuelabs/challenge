@@ -38,8 +38,8 @@ class Product extends Entity
         int $id = null,
         string $name = null,
         float $price = null,
-        array $specifications = [])
-    {
+        array $specifications = []
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
@@ -117,5 +117,4 @@ class Product extends Entity
     {
         return $this->specifications;
     }
-
 }
