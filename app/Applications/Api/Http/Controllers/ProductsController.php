@@ -50,7 +50,9 @@ class ProductsController extends BaseController
     {
         $specifications = $this->request->get('specifications');
 
-        $products = (new ProductsRepository($this->collector))->getAllBySpecifications($specifications, $this->sortBy, $this->order);
+        $products = (new ProductsRepository($this->collector))
+            ->getAllBySpecifications($specifications, $this->sortBy, $this->order);
+
         return $this->response->collection($products, new ProductTransform());
     }
 

@@ -80,13 +80,15 @@ class ProductsRepository
         );
 
         $filter = function ($item) use ($wantedSpecifications) {
-            $match = null;
+            $count = 0;
 
             foreach ($wantedSpecifications as $specification) {
-                $match = stristr(implode(",", $item->specifications), $specification);
+                if (preg_grep('/^' . $specification . '/i', $item->specifications)) {
+                    $count++;
+                }
             }
 
-            return $match;
+            return $count > 0;
         };
 
         $items = $items->filter($filter)->flatten();
