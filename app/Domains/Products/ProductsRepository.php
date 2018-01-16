@@ -30,17 +30,7 @@ class ProductsRepository
      */
     public function getAll($sortBy, $order)
     {
-        $items = $this->products;
-
-        // sort by field asc...
-        if (! (is_null($sortBy) && is_null($order)) && strtolower($order) == 'asc') {
-            $items = $items->sortBy($sortBy)->flatten();
-        }
-
-        //sort by field desc...
-        if (! (is_null($sortBy) && is_null($order)) && strtolower($order) == 'desc') {
-            $items = $items->sortByDesc($sortBy)->flatten();
-        }
+        $items = $this->sortProducts($sortBy, $order);
 
         return $items->map(function ($item) {
             return $this->convertToProduct($item);
@@ -100,5 +90,26 @@ class ProductsRepository
     private function convertToProduct($item)
     {
         return new Product($item->id, $item->name, $item->price, $item->specifications);
+    }
+
+    /**
+     * @param $sortBy
+     * @param $order
+     * @return Collection|array|mixed|static
+     */
+    private function sortProducts($sortBy, $order)
+    {
+        $items = $this->products;
+
+        // sort by field asc...
+        if (!(is_null($sortBy) && is_null($order)) && strtolower($order) == 'asc') {
+            $items = $items->sortBy($sortBy)->flatten();
+        }
+
+        //sort by field desc...
+        if (!(is_null($sortBy) && is_null($order)) && strtolower($order) == 'desc') {
+            $items = $items->sortByDesc($sortBy)->flatten();
+        }
+        return $items;
     }
 }
