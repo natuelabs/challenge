@@ -39,7 +39,7 @@ class ProductsRepository
      */
     public function findById($id)
     {
-        return $this->products->where('id', $id)->first();
+        return $this->convertToProduct($this->products->where('id', $id)->first());
     }
 
     /**
