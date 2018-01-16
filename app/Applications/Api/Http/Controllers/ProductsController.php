@@ -4,7 +4,6 @@ namespace App\Applications\Api\Http\Controllers;
 
 use App\Domains\Products\ProductsRepository;
 use App\Domains\Products\ProductTransform;
-use App\Support\Api\ApiResponse;
 
 class ProductsController extends BaseController
 {
@@ -16,13 +15,13 @@ class ProductsController extends BaseController
     public function all()
     {
         $products = (new ProductsRepository($this->collector))->getAll();
-        $response = new ApiResponse();
-
-        return $response->collection($products, new ProductTransform());
+        return $this->response->collection($products, new ProductTransform());
     }
 
     public function show($id)
     {
-        echo "show product with id: $id";
+        $product = (new ProductsRepository($this->collector))->findById($id);
+
+        return $this->response->item($product, new ProductTransform());
     }
 }
