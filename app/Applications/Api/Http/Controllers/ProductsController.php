@@ -14,10 +14,19 @@ class ProductsController extends BaseController
      */
     public function all()
     {
-        $products = (new ProductsRepository($this->collector))->getAll();
+        $sortBy = $this->request->get('sortBy');
+        $order = $this->request->get('order');
+
+        $products = (new ProductsRepository($this->collector))->getAll($sortBy, $order);
         return $this->response->collection($products, new ProductTransform());
     }
 
+    /**
+     * Show a product.
+     *
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function show($id)
     {
         $product = (new ProductsRepository($this->collector))->findById($id);

@@ -24,11 +24,25 @@ class ProductsRepository
     /**
      * Get all products.
      *
+     * @param $sortBy
+     * @param $order
      * @return Collection
      */
-    public function getAll()
+    public function getAll($sortBy, $order)
     {
-        return $this->products->map(function ($item) {
+        $items = $this->products;
+
+        // sort by field asc...
+        if (! (is_null($sortBy) && is_null($order)) && strtolower($order) == 'asc') {
+            $items = $items->sortBy($sortBy)->flatten();
+        }
+
+        //sort by field desc...
+        if (! (is_null($sortBy) && is_null($order)) && strtolower($order) == 'desc') {
+            $items = $items->sortByDesc($sortBy)->flatten();
+        }
+
+        return $items->map(function ($item) {
             return $this->convertToProduct($item);
         });
     }
