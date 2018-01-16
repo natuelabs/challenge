@@ -44,8 +44,16 @@ class ApiResponse
      */
     public function collection(Collection $collection, TransformInterface $transform)
     {
-        $this->data = Transform::make($collection, $transform);
+        $this->data = Transform::collection($collection, $transform);
 
+        return new Response($this->collectionResponseStructure(), 200, [
+            'Content-type' => $this->contentType
+        ]);
+    }
+
+    public function item($item, TransformInterface $transform)
+    {
+        $this->data = Transform::item($item, $transform);
         return new Response($this->collectionResponseStructure(), 200, [
             'Content-type' => $this->contentType
         ]);
