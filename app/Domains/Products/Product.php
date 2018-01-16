@@ -86,7 +86,7 @@ class Product extends Entity
      * @param int $price
      * @return $this
      */
-    public function setPrice(int $price)
+    public function setPrice(float $price)
     {
         $this->price = $price;
         return $this;
@@ -106,7 +106,7 @@ class Product extends Entity
      */
     public function setSpecifications(array $specifications)
     {
-        $this->specifications[] = $specifications;
+        $this->specifications = $specifications;
         return $this;
     }
 

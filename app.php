@@ -2,9 +2,6 @@
 
 require_once 'bootstrap.php';
 
-$loader = require 'vendor/autoload.php';
-$loader->register();
-
 use Symfony\Component\HttpFoundation\Request;
 use App\Framework\Http\Kernel;
 
