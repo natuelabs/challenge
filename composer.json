@@ -20,5 +20,8 @@
         "symfony/http-foundation": "2.5.*",
         "symfony/http-kernel": "2.5.*",
         "symfony/routing": "2.5.*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
     }
 }
