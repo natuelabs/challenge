@@ -27,3 +27,29 @@ Remember that at the time of the evaluation we will look at:
 To send us your code, you must:
 
 Make a fork of this repository, and send us a pull-request.
+
+## Instructions of Use
+
+### Requirements
+
+ * Composer >= 1.4
+ * PHP >= 7.0
+ 
+No database is required.
+ 
+### How to run
+
+Respecting the challenge determinations, the start point to this applications occur in **``` app.php ```**. 
+
+```php
+   composer install && php -S localhost:8080 app.php
+```
+
+## API Resources Endpoint
+
+### Products
+
+ * Get all products [http://localhost:8080/api/v1/products](http://localhost:8080/api/v1/products)
+ * Get all products sorting by ANY field [http://localhost:8080/api/v1/products?sortBy={fieldName}&order={asc|desc}](http://localhost:8080/api/v1/products?sortBy={fieldName}&order={desc:asc|desc})
+ 
+ If ordering occurs through the specifications field, the system will not sort it alphabetically. Because specifications are an array, sorting will occur by counting items in the array. 
