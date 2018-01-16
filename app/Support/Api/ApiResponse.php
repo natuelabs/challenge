@@ -20,16 +20,17 @@ class ApiResponse
     private $contentType = 'application/vnd.api+json';
 
     /**
+     * @param $count
      * @return string
      */
-    private function collectionResponseStructure()
+    private function responseData($count)
     {
         $structure = [
-            'data' => $this->data,
+            'errors' => [],
             'metadata' => [
-                'count' => count($this->data)
+                'count' => $count
             ],
-            'errors' => []
+            'data' => $this->data
         ];
 
         return json_encode($structure);
@@ -58,12 +59,20 @@ class ApiResponse
     public function collection(Collection $collection, TransformInterface $transform)
     {
         $this->data = Transform::collection($collection, $transform);
-        return new Response($this->collectionResponseStructure(), 200, $this->headers());
+        return new Response($this->responseData($this->data->count()), 200, $this->headers());
     }
 
+    /**
+     * Response success with a specified item.
+     *
+     * @param $item
+     * @param TransformInterface $transform
+     * @return Response
+     */
     public function item($item, TransformInterface $transform)
     {
         $this->data = Transform::item($item, $transform);
-        return new Response($this->collectionResponseStructure(), 200, $this->headers());
+        $count = count($this->data) > 0 ? 1 : 0;
+        return new Response($this->responseData($count), 200, $this->headers());
     }
 }
