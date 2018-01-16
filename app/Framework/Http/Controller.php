@@ -9,7 +9,7 @@ class Controller
     /**
      * @var Request
      */
-    private $request;
+    protected $request;
 
     /**
      * Controller constructor.
