@@ -60,7 +60,7 @@ class Kernel implements HttpKernelInterface
                 list($class, $method) = explode('@', $controller['uses']);
                 unset($attributes['_controller']);
                 unset($attributes['_route']);
-                return call_user_func_array([new $class(), $method], $attributes);
+                return call_user_func_array([new $class($request), $method], $attributes);
             }
 
             // if not exists, work with closure.
