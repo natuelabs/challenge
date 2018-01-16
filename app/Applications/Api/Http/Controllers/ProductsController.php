@@ -4,9 +4,34 @@ namespace App\Applications\Api\Http\Controllers;
 
 use App\Domains\Products\ProductsRepository;
 use App\Domains\Products\ProductTransform;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductsController extends BaseController
 {
+
+    /**
+     * @var string
+     */
+    private $sortBy;
+
+    /**
+     * @var string
+     */
+    private $order;
+
+    /**
+     * ProductsController constructor.
+     *
+     * @param Request $request
+     */
+    public function __construct(Request $request)
+    {
+        parent::__construct($request);
+
+        $this->sortBy = $this->request->get('sortBy');
+        $this->order = $this->request->get('order');
+    }
+
     /**
      * Get all products.
      *
@@ -14,10 +39,7 @@ class ProductsController extends BaseController
      */
     public function all()
     {
-        $sortBy = $this->request->get('sortBy');
-        $order = $this->request->get('order');
-
-        $products = (new ProductsRepository($this->collector))->getAll($sortBy, $order);
+        $products = (new ProductsRepository($this->collector))->getAll($this->sortBy, $this->order);
         return $this->response->collection($products, new ProductTransform());
     }
 
