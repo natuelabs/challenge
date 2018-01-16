@@ -47,6 +47,11 @@ composer install && php -S localhost:8080 app.php
 
 ## API Resources Endpoint
 
+ ### <a name="specifications"></a>Specifications
+ 
+  * **Get all specifications** 
+    - **url**: [http://localhost:8080/api/v1/specifications](http://localhost:8080/api/v1/specifications)
+
 ### Products
 
  * **Get all products** 
@@ -59,13 +64,9 @@ composer install && php -S localhost:8080 app.php
      
  * **Search products by specifications (work separated by comma)** 
    - **url**: [http://localhost:8080/api/v1/products/search?specifications={specifications}&sortBy={sortBy}&order={order}](http://localhost:8080/api/v1/products/search?specifications={specifications}&sortBy={sortBy}&order={order})
-   - **{specifications} options**: one or more than one item of the [specifications](?#specifications) list.
+   - **{specifications} options**: one or more than one item of the [specifications](#specifications) list.
    - **{sortBy} options**: id, name, price, specifications*
    - **{order} options**: asc, desc
    
  > (*) If ordering occurs through the specifications field, the system will not sort it alphabetically. Because specifications are an array, sorting will occur by counting items in the array.
  
- ### <a name="specifications"></a>Specifications
- 
-  * **Get all specifications** 
-    - **url**: [http://localhost:8080/api/v1/specifications](http://localhost:8080/api/v1/specifications)
