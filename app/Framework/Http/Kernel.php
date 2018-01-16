@@ -18,6 +18,9 @@ class Kernel implements HttpKernelInterface
      */
     protected $routes;
 
+    /**
+     * Kernel constructor.
+     */
     public function __construct()
     {
         $this->routes = new RouteCollection();
@@ -51,6 +54,16 @@ class Kernel implements HttpKernelInterface
             $attributes = $matcher->match($request->getPathInfo());
 
             $controller = $attributes['_controller'];
+
+            // call controller class and methods, if 'uses' key exists.
+            if (array_key_exists('uses', $controller)) {
+                list($class, $method) = explode('@', $controller['uses']);
+                unset($attributes['_controller']);
+                unset($attributes['_route']);
+                return call_user_func_array([new $class(), $method], $attributes);
+            }
+
+            // if not exists, work with closure.
             unset($attributes['_controller']);
             $response = call_user_func_array($controller, $attributes);
         } catch (ResourceNotFoundException $e) {
