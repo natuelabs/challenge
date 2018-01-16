@@ -68,6 +68,15 @@ class ProductsController extends BaseController
     {
         $product = (new ProductsRepository($this->collector))->findById($id);
 
+        if (is_null($product)) {
+            $error = [
+                'code' => 404,
+                'description' => 'Product not found'
+            ];
+
+            return $this->response->error($error, 404);
+        }
+
         return $this->response->item($product, new ProductTransform());
     }
 

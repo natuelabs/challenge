@@ -38,6 +38,23 @@ class ApiResponse
     }
 
     /**
+     * @param array $errors
+     * @return string
+     */
+    private function responseDataWithError(array $errors)
+    {
+        $structure = [
+            'errors' => $errors,
+            'metadata' => [
+                'count' => 0
+            ],
+            'data' => []
+        ];
+
+        return json_encode($structure);
+    }
+
+    /**
      * @return array
      */
     private function headers()
@@ -85,5 +102,10 @@ class ApiResponse
     public function raw($data, $count)
     {
         return new Response($this->responseData($data, $count), 200, $this->headers());
+    }
+
+    public function error(array $errors, $code = Response::HTTP_NOT_FOUND)
+    {
+        return new Response($this->responseDataWithError($errors), $code, $this->headers());
     }
 }

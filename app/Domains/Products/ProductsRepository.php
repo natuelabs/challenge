@@ -4,6 +4,7 @@ namespace App\Domains\Products;
 
 use App\Support\Collection;
 use App\Support\DataCollector\DataCollector;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ProductsRepository
 {
@@ -48,6 +49,12 @@ class ProductsRepository
      */
     public function findById($id)
     {
+        $product = $this->products->where('id', $id)->first();
+
+        if (is_null($product)) {
+            return null;
+        }
+
         return $this->convertToProduct($this->products->where('id', $id)->first());
     }
 
