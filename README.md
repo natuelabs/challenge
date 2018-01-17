@@ -41,8 +41,15 @@ Make a fork of this repository, and send us a pull-request.
 
 Respecting the challenge determinations, the start point to this applications occur in **``` app.php ```**. 
 
+#### To run...
+
 ```php
 composer install && php -S localhost:8080 app.php
+```
+
+#### To test...
+```php
+./vendor/bin/phpunit
 ```
 
 ## API Resources Endpoint
