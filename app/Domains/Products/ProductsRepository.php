@@ -29,7 +29,7 @@ class ProductsRepository
      * @param $order
      * @return Collection
      */
-    public function getAll($keyword, $sortBy, $order)
+    public function getAll($keyword = null, $sortBy = null, $order = null)
     {
         $items = $this->sortProducts($sortBy, $order);
 
@@ -81,7 +81,7 @@ class ProductsRepository
      * @param $order
      * @return Collection
      */
-    public function getAllBySpecifications($wantedSpecifications, $sortBy, $order)
+    public function getAllBySpecifications($wantedSpecifications = null, $sortBy = null, $order = null)
     {
         $items = $this->sortProducts($sortBy, $order);
 
