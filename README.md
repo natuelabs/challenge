@@ -48,7 +48,7 @@ composer install && php -S localhost:8080 app.php
 ```
 
 #### To test...
-```php
+```bash
 ./vendor/bin/phpunit
 ```
 
