@@ -28,15 +28,15 @@ class Router
             throw new NotFoundException("Not found");
         }
 
-        if (!is_callable($match['callback'])) {
-            throw new \RuntimeException("Callback defined to route '{$request_uri}' is not valid");
-        }
-
         call_user_func($match['callback'], $match['arguments']);
     }
 
     private function register($method, $uri, $callback)
     {
+        if (!is_callable($callback)) {
+            throw new \RuntimeException("Callback is not valid callable");
+        }
+
         $this->routes[$method][$uri] = $callback;
     }
 
