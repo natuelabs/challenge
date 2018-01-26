@@ -53,7 +53,10 @@ class JSONProductRepository implements ProductRepositoryInterface
      */
     public function getProduct($id)
     {
-        $key = array_search($id, array_column($this->products, 'id'));
+        $key = array_search($id, array_map(function ($product) {
+            return $product->getId();
+        }, $this->products));
+
         if ($key === false) {
             throw new \InvalidArgumentException("Product #$id not found");
         }
@@ -67,7 +70,6 @@ class JSONProductRepository implements ProductRepositoryInterface
      */
     public function getBySpecifications($specifications)
     {
-
         return array_filter($this->products, function ($product) use ($specifications) {
             return $product->hasSomeSpecification($specifications);
         });
