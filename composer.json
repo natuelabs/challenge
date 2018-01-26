@@ -13,6 +13,11 @@
       "App\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
   "require": {
     "php": ">=5.6"
   },
@@ -20,5 +25,8 @@
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
   }
 }
