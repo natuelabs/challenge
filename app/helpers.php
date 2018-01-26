@@ -45,7 +45,7 @@ function json(array $data = [], $response_code = 200)
         header('Content-type: application/json', true);
         http_response_code($response_code);
     }
-    die(json_encode($data));
+    return json_encode($data);
 }
 
 function is_ajax()

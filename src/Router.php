@@ -28,7 +28,7 @@ class Router
             throw new NotFoundException("Not found");
         }
 
-        call_user_func($match['callback'], $match['arguments']);
+        echo call_user_func($match['callback'], $match['arguments']);
     }
 
     private function register($method, $uri, $callback)

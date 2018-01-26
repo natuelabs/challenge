@@ -25,7 +25,7 @@ class ProductController
             array_sort_numeric_column($array_products, 'price', $_REQUEST['sort'] == 'asc');
         }
 
-        json([
+        return json([
             'products' => $array_products
         ], 200);
     }
