@@ -41,8 +41,10 @@ function is_dev()
 
 function json(array $data = [], $response_code = 200)
 {
-    header('Content-type: application/json');
-    http_response_code($response_code);
+    if (!headers_sent()) {
+        header('Content-type: application/json', true);
+        http_response_code($response_code);
+    }
     die(json_encode($data));
 }
 
