@@ -4,26 +4,52 @@
   </a>
 </p>
 
-## Challenge for Backend Developer
+# Challenge for Backend Developer
 
-A customer needs to search in our product catalog (available in this <a href="https://github.com/natuelabs/challenge/blob/master/products.json">JSON</a>) and he wants to find products that match your food restrictions.
-Based on this you will need to develop:
+## Disclaimer
 
-- a simple API to search products in the .json available;
-- it should be possible to search for products by their specifications (one or more);
-- it must be possible to order the result by price (asc and desc);
+This project is a test for natuelabs/challenge.
 
-The test should be done in PHP, Python or NodeJS and we like if you avoid frameworks like our app examples. We expect at the end of the test, outside the API running, the following items:
+## Run
 
-- an explanation of what is needed to make your project work;
-- an explanation of how to perform the tests;
+To run this, you need to clone it and run `composer install`:
 
-Remember that at the time of the evaluation we will look at:
+```
+$ git clone https://github.com/gustavonovaes/challenge.git
+$ cd challenge/
+$ composer install
+```
 
-- Code organization;
-- Object-Oriented Principles;
-- Maintenance;
+You can then run the application using PHP's built-in server:
 
-To send us your code, you must:
+```
+php -S 0.0.0.0:8000 -t public/
+```
 
-Make a fork of this repository, and send us a pull-request.
+The API is running at [http://localhost:8000](http://localhost:8000/).
+
+## Endpoints
+
+- `GET` /products
+    ###### Parameters
+    - ***sort*** 
+        - 'asc' - Sort in ascending order (lowest or least-recent first)
+        - 'desc' - Sort in descending order (highest or most-recent first)           
+    - ***specifications***
+        - `:specifications` comma-separated values. Returns products that have at least one.
+        
+### Examples Requests
+
+```
+GET http://localhost:8000/products?specifications=vegan,low-carb
+GET http://localhost:8000/products?specifications=lactose-free&sort=asc
+```
+
+## Tests
+
+Execute this command to run tests:
+
+```bash
+$ cd challenge/
+$ ./vendor/bin/phpunit
+```
