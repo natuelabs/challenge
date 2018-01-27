@@ -15,9 +15,9 @@ This project is a test for natuelabs/challenge.
 To run this, you need to clone it and run `composer install`:
 
 ```
-git clone https://github.com/gustavonovaes/challenge.git
-cd challenge/
-composer install
+$ git clone https://github.com/gustavonovaes/challenge.git
+$ cd challenge/
+$ composer install
 ```
 
 You can then run the application using PHP's built-in server:
@@ -43,4 +43,13 @@ The API is running at [http://localhost:8000](http://localhost:8000/).
 ```
 GET http://localhost:8000/products?specifications=vegan,low-carb
 GET http://localhost:8000/products?specifications=lactose-free&sort=asc
+```
+
+## Tests
+
+Execute this command to run tests:
+
+```bash
+$ cd challenge/
+$ ./vendor/bin/phpunit
 ```
