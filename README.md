@@ -24,3 +24,42 @@ Remember that at the time of the evaluation we will look at:
 To send us your code, you must:
 
 Make a fork of this repository, and send us a pull-request.
+
+## About the test
+
+### Requirements
+• PHP 5.4 or higher 
+
+• Apache Server 
+
+### About
+This application was developed using the Laravel Framework in version 5.4 and implemented using Repository Pattern.
+
+You can consult a guide on how to run the test by accessing a project root in the browser
+
+    http://localhost/
+
+### How to use
+
+#### Products
+
+    http://localhost/api/products
+
+##### Attributes
+
+q
+
+This attribute is used to filter products by their specifications. If it is necessary to send more than 1 specification the values can be separated by "+"
+
+
+    http://localhost/api/products?q=vegan+lactose-free
+    
+order
+
+This attribute is used to set the order of products at the price. The values that can be used are ASC and DESC
+
+    http://localhost/api/products?order=asc
+    
+Url with both
+
+    http://localhost/api/products?q=vegan+lactose-free&order=asc
