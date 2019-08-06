@@ -1,0 +1,32 @@
+{
+    "name": "zabaala/natue-api",
+    "description": "Natue challenge API",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mauricio Rodrigues",
+            "email": "mmauricio.vsr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "symfony/http-foundation": "2.5.*",
+        "symfony/http-kernel": "2.5.*",
+        "symfony/routing": "2.5.*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    }
+}
