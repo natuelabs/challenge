@@ -1,11 +1,12 @@
-// Usage:
-// npm install http
-// node app.js
-var http = require('http');
+var express = require('express'),
+  app = express(),
+  port = process.env.PORT || 3000;
 
-var server = http.createServer(function(request, response) {
-  response.write('Hello Natue');
-  response.end();
-});
+var routes = require('./api/routes/routes'); 
+var bodyParser = require('body-parser');
 
-server.listen(8080);
+routes(app);
+
+module.exports = app.listen(port);
+
+console.log(' Hellooooo! Server is running on port: ' + port);

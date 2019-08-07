@@ -1,0 +1,23 @@
+{
+  "name": "natue",
+  "version": "1.0.0",
+  "description": "natue hiring challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "nodemon app.js"
+  },
+  "author": "Felipe Castro",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^2.4.5",
+    "express": "^4.17.1",
+    "use-strict": "^1.0.1"
+  }
+}
