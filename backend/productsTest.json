@@ -1,0 +1,22 @@
+[{
+  "id": 0,
+  "name": "product 0 test",
+  "price": 12.50,
+  "specifications": [
+    "low-carbs"
+  ]
+}, {
+  "id": 1,
+  "name": "product 1 test",
+  "price": 23.50,
+  "specifications": [
+    "medium-carbs"
+  ]
+}, {
+  "id": 2,
+  "name": "product 0 test",
+  "price": 42.50,
+  "specifications": [
+    "high-carbs"
+  ]
+}]
