@@ -42,10 +42,11 @@
 
 ```bash
     # clonar repositório
-    git clone http://github.com/ruanvsrateira/products-json-api.git
+    git clone http://github.com/ruanvsrateira/challenge.git
 
     # Entrar no repositório
-    cd products-json-api
+    cd challenge
+    cd backend
 
     # Instalação de dependencias
     npm i
